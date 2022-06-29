@@ -1,0 +1,70 @@
+<form   [formGroup]="employeeForm" >
+  <mat-toolbar> Employee Onboarding </mat-toolbar>
+
+ <mat-grid-list cols="4" rowHeight="400px">
+    <mat-grid-tile >
+    </mat-grid-tile >
+
+    <mat-grid-tile  >
+        <div>
+          
+          <mat-form-field appearance="outline" class="width-100" >
+            <mat-label>Employee Name</mat-label>
+            <input matInput type="text" placeholder="Ex:John" formControlName="employeeName">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="width-100">
+            <mat-label>Experience</mat-label>
+            <input matInput type="number" placeholder="Ex:12" formControlName="experience"  >
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="width-100">
+            <mat-label>Qualification</mat-label>
+            <input matInput type="text" formControlName="qualification" >
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="width-100">
+            <mat-label>Salary</mat-label>
+            <input matInput type="number" placeholder="Ex:10000" formControlName="salary">
+          </mat-form-field>
+<!-- 
+          <mat-form-field appearance="outline" class="width-100">
+            <mat-label>Designation</mat-label>
+            <mat-select formControlName="designation" >
+              <mat-option>Select</mat-option>
+              <mat-option *ngFor="let designations  of designation" [value]=designations.designation_name >
+                {{designations.designation_name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field> -->
+          
+        </div>
+    </mat-grid-tile>
+    
+
+ <mat-grid-tile>
+
+        <div>
+          <mat-label>Highest Qualification </mat-label>
+          <input type="file"  formControlName="qualificationDoc" (change)="onChange($event)"><br>
+       
+          <!-- <mat-label>SSC certificate</mat-label>
+          <input type="file" formControlName="sscCertificate" (change)="onChange($event)"><br>
+        
+          <mat-label>Releaving Letter</mat-label>
+          <input type="file" formControlName="releavingLetter" (change)="onChange($event)"><br> -->
+         </div>
+
+  </mat-grid-tile> 
+
+</mat-grid-list>
+
+<mat-grid-list cols="1" rowHeight="100px">
+    <mat-grid-tile >  
+        <button mat-raised-button color="primary" type="submit" (click)="onSubmit()" [disabled]="employeeForm.valid" >Submit</button>
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+</form>
+         

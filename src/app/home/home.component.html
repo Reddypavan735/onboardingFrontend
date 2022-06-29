@@ -1,0 +1,24 @@
+<mat-toolbar>
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+    </mat-toolbar>
+    
+    <mat-sidenav-container>
+        <mat-sidenav mode = "side" opened>
+            <button mat-button (click)="onboarding()" >
+                <mat-icon>person</mat-icon>
+                <span> Onboarding</span>
+            </button>
+            <mat-divider></mat-divider>
+
+            <button mat-button (click)="login()" >
+                <mat-icon>lock_open</mat-icon>
+                <span>Login</span>
+            </button>
+         </mat-sidenav>
+        <mat-sidenav-content >
+            <div class="content mat-elevation-z8">
+               Welcome!!!
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
